@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My LinkTree</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
-
-  <!-- CSS External -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="music.css">
 </head>
 <body>
   <div class="container">
@@ -46,7 +44,36 @@
     </div>
   </div>
 
-  <!-- JS External -->
-  <script src="script.js"></script>
+  <script>
+  const audio = document.getElementById('audio');
+const playBtn = document.getElementById('play-btn');
+const currentTime = document.getElementById('current-time');
+const duration = document.getElementById('duration');
+
+let playing = false;
+
+playBtn.addEventListener('click', () => {
+  if (playing) {
+    audio.pause();
+    playBtn.textContent = '▶';
+  } else {
+    audio.play();
+    playBtn.textContent = '⏸';
+  }
+  playing = !playing;
+});
+
+audio.addEventListener('timeupdate', () => {
+  const minutes = Math.floor(audio.currentTime / 60);
+  const seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+  currentTime.textContent = `${minutes}:${seconds}`;
+});
+
+audio.addEventListener('loadedmetadata', () => {
+  const totalMinutes = Math.floor(audio.duration / 60);
+  const totalSeconds = Math.floor(audio.duration % 60).toString().padStart(2, '0');
+  duration.textContent = `${totalMinutes}:${totalSeconds}`;
+});
+  </script>
 </body>
 </html>
