@@ -83,89 +83,53 @@ p {
   background-color: #3730a3;
 }
 
-.music-player {
-  margin-top: 2rem;
-}
+/* ... kode CSS lainnya ... */
 
-.music-box {
-  background-color: #242838;
-  padding: 1rem;
-  border-radius: var(--radius);
-}
-
-.cover {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.music-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-direction: row;
-}
-
-.info h3 {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-}
-
-.info p {
-  font-size: 0.85rem;
-  color: #ccc;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.controls button {
-  background-color: var(--accent-color);
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.controls button:hover {
-  background-color: #3730a3;
-}
-
-.controls span {
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  /* Atur ulang layout untuk mobile */
   .container {
-    padding: 1.5rem;
+    flex-direction: column; /* Ubah menjadi kolom */
   }
 
-  h1 {
-    font-size: 1.5rem;
+  .music-player,
+  .contact-section {
+    width: 100%; /* Pastikan elemen ini penuh lebar */
+    margin-top: 2rem; /* Jarak antar elemen */
   }
 
-  .profile img {
-    width: 100px;
-    height: 100px;
+  .music-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .music-header {
-    flex-direction: column;
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
-  .cover {
-    width: 60px;
-    height: 60px;
+  .controls button {
+    font-size: 1.2rem; /* Ukuran tombol lebih besar */
+    padding: 0.5rem 1rem; /* Padding lebih besar */
+  }
+
+  .controls span {
+    font-size: 0.9rem; /* Ukuran teks lebih besar */
+  }
+
+  .contact-section {
+    margin-top: 2rem; /* Jarak dari elemen sebelumnya */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; /* Pastikan input penuh lebar */
+    padding: 1rem; /* Padding lebih besar */
+  }
+
+  .contact-form button {
+    width: 100%; /* Tombol penuh lebar */
+    padding: 1rem; /* Padding lebih besar */
   }
 }
