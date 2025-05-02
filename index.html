@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="music.css">
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
   <div class="container">
@@ -43,6 +44,17 @@
       </div>
     </div>
   </div>
+  
+  <!-- Tambahkan setelah div music-player -->
+<div class="contact-section">
+    <h2>Hubungi Saya</h2>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah diterima.');">
+        <input type="text" placeholder="Nama Anda" required>
+        <input type="email" placeholder="Email Anda" required>
+        <textarea rows="4" placeholder="Pesan..." required></textarea>
+        <button type="submit">Kirim Pesan</button>
+    </form>
+</div>
 
   <script>
   const audio = document.getElementById('audio');
